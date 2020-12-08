@@ -1,0 +1,47 @@
+<html>
+<head>
+	<meta content="text/html" charset="UTF-8" http-equiv="content-type"/>
+	<link rel="stylesheet" type="text/css" href="CSS/projecte.css" />
+	<script language="javascript" src="http://localhost/daw2_m07uf1_projecte_grup09/peticionsrecepcions/repPeticionsusersdelete.js"></script>
+	<script language="javascript" src="http://localhost/daw2_m07uf1_projecte_grup09/peticionsrecepcions/repPeticionsusersmodified.js"></script>
+	<title>projecte</title>
+</head>
+<body>
+    <div id="capcalera">
+		<h3>projecte</h3>
+		<ul>
+			<li><a href="adminprincipal.html">MAIN</a></li>
+			<li><a href="maintenancecatalog.html">Maintenance Catalog</a></li>
+			<li><a href="managementcommands.html">Management  Commands</a></li>
+			<li><a href="logout.php"><img src="IMATGES/sortida.png" class="icona"/></a></li>
+		</ul>
+	</div>
+	<div class="contingut_dret">
+		<h1>USERS</h1>
+		<a class="a_button" href="peticionsrecepcions/visualitzarpeticions.php">VIEW REQUESTS</a>
+		<form id="formulari" class="formulari">
+            <h1>DELETE USER</h1>
+			<label for="form_iduser">Id User:</label>
+			<input maxlength="100" name="form_iduser" id="form_iduser" type="number"/><br/>
+            <input class="form_buttom" type="button" value="SEND" onclick="commandPeticio();"/>
+            <input class="form_buttom" type="button" value="REMOVE" onclick="netForm();"/>
+		</form>
+		<p id="resp"></p>
+	</div>
+	<div class="contingut_esquerre">
+		<form id="formulari2" class="formulari">
+            <h1>MODIFIED USER</h1>
+			<label for="form_iduser">Id User:</label>
+			<input maxlength="100" name="form_iduser" id="form_iduser" type="number"/><br/>
+			<label for="form_dataoption">Num.Datachange:</label>
+			<input maxlength="100" name="form_dataoption" id="form_dataoption" min="2" max="7" type="number"/><br/>
+            <input class="form_buttom" type="button" value="SEND" onclick="commandPeticio2();"/>
+            <input class="form_buttom" type="button" value="REMOVE" onclick="netForm2();"/>
+		</form>
+		<p id="resp2"></p>
+	</div>
+	<div id="peudepagina">
+		<p>© projecte</p>
+	</div>
+</body>
+</html>

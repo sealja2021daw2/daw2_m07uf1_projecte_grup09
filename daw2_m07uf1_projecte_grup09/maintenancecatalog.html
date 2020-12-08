@@ -1,0 +1,77 @@
+<html>
+<head>
+	<meta content="text/html" charset="UTF-8" http-equiv="content-type"/>
+    <link rel="stylesheet" type="text/css" href="CSS/projecte.css" />
+    <script language="javascript" src="http://localhost/daw2_m07uf1_projecte_grup09/accions/eliminarproducte.js"></script>
+    <script language="javascript" src="http://localhost/daw2_m07uf1_projecte_grup09/accions/modificarproducte.js"></script>
+	<title>projecte</title>
+</head>
+<body>
+    <div id="capcalera">
+		<h3>projecte</h3>
+		<ul>
+			<li><a href="adminprincipal.html">MAIN</a></li>
+			<li><a href="maintenancecatalog.html">Maintenance Catalog</a></li>
+			<li><a href="managementcommands.html">Management  Commands</a></li>
+			<li><a href="logout.php"><img src="IMATGES/sortida.png" class="icona"/></a></li>
+		</ul>
+	</div>
+	<div class="contingut_esquerre">
+        <form class="formulari" action="http://localhost/daw2_m07uf1_projecte_grup09/accions/afegirproducte.php" method="POST">
+            <h1>ADD PRODUCT</h1>
+            <label for="form_code">Code:</label>
+            <input maxlength="100" name="form_code"  type="text"/><br/>
+            <label for="form_name">Name:</label>
+            <input maxlength="100" name="form_name"  type="text"/><br/>
+            <label for="form_section">Section:</label>
+            <input maxlength="100" name="form_section"  type="text"/><br/>
+            <label for="form_image">Image:</label>
+            <input maxlength="100" name="form_image"  type="text"/><br/>
+            <label for="form_price">Price:</label>
+            <input name="form_price"  value='0' type="number" step=".01"/><br/>
+            <input class="form_buttom" type="submit" value="SEND"/>
+            <input class="form_buttom" type="reset" value="REMOVE"/>
+        </form>
+        <form id="formulari" class="formulari">
+            <h1>DELETE PRODUCT</h1>
+			<label for="form_codeproduct">Code product:</label>
+			<input maxlength="100" name="form_codeproduct" id="form_codeproduct" type="text"/><br/>
+            <input class="form_buttom" type="button" value="SEND" onclick="commandPeticio();"/>
+            <input class="form_buttom" type="button" value="REMOVE" onclick="netForm();"/>
+            <p id="resp"></p>
+        </form>
+        <form id="formulari2" class="formulari">
+            <h1>MODIFIED PRODUCT</h1>
+			<label for="form_codeproduct">Code product:</label>
+			<input maxlength="100" name="form_codeproduct" id="form_codeproduct" type="text"/><br/>
+			<label for="form_dataoption">Num.Datachange:</label>
+            <input maxlength="100" name="form_dataoption" id="form_dataoption" min="2" max="4" type="number"/><br/>
+            <label for="form_changedata">Data Change Value:</label>
+			<input maxlength="300" name="form_changedata" id="form_changedata" type="text"/><br/>
+            <input class="form_buttom" type="button" value="SEND" onclick="commandPeticio2();"/>
+            <input class="form_buttom" type="button" value="REMOVE" onclick="netForm2();"/>
+            <p id="resp2"></p>
+        </form>
+    </div>
+    <div class="contingut_dret">
+        <a class="a_button" href="accions/visualitzarseccions.php">VIEW SECTIONS</a>
+        <form class="formulari" action="http://localhost/daw2_m07uf1_projecte_grup09/accions/visualitzarproductesseccio.php" method="GET">
+            <h1>PRODUCTS for SECTION</h1>
+            <label for="form_code">Section:</label>
+            <input maxlength="100" name="form_section"  type="text"/><br/>
+            <input class="form_buttom" type="submit" value="SEND"/>
+            <input class="form_buttom" type="reset" value="REMOVE"/>
+        </form>
+        <form class="formulari" action="http://localhost/daw2_m07uf1_projecte_grup09/accions/visualitzarproductedades.php" method="GET">
+            <h1>SEARCH PRODUCT</h1>
+            <label for="form_name">Name:</label>
+            <input maxlength="100" name="form_name"  type="text"/><br/>
+            <input class="form_buttom" type="submit" value="SEND"/>
+            <input class="form_buttom" type="reset" value="REMOVE"/>
+        </form>
+    </div>
+	<div id="peudepagina">
+		<p>© projecte</p>
+	</div>
+</body>
+</html>

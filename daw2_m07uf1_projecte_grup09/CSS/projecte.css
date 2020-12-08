@@ -1,0 +1,201 @@
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+
+/*GENERALS */
+*::selection {
+    background: yellow;
+    color:red;
+    text-shadow: 1px 1px white;
+}
+body{
+    color:black;
+    font-size: 1em;
+    margin: 0% 9.1% 0% 0%;
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+}
+
+
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+div{
+    width: 100%;
+    float: left;
+    position: static;
+    padding: 5%;
+    margin: 0%;
+    z-index: 0;
+}
+
+
+li{
+    display: inline;
+    text-align: center;
+    margin: 0 10px 0 0; 
+}
+
+h1{
+    margin:2% 20%;
+    font-size: 2.2em;
+	transition:all .3s ease-in-out;
+}
+h1:hover{
+    transform:translate(2%);
+}
+p{
+    margin:2% 20%;
+    font-size: 1em;
+   
+}
+img{
+	transition:all .3s ease-in-out;
+}
+img:hover{
+    transform: scale(1.1);
+}
+
+
+input{
+    margin: 2%;
+}
+input:focus, textarea:focus {
+    color: red;
+  }
+
+input[type="submit"],input[type="reset"] {
+    width:50%;
+    background-color: white;
+}
+
+
+/*enllaços especials*/
+.a_button{
+    background-color: black;
+    filter: opacity(70%);
+    border-radius: 28px;
+    padding: 19px;
+	transition:all .3s ease-in-out;
+}
+
+.a_button:hover{
+    background-color: green;
+    filter: brightness(98%);
+}
+
+
+/*imatges */
+
+
+.imatgeX2{
+    width: 20%;
+}
+.imatgeX1redondo{
+    width: 15%;
+    border-radius: 50%;
+}
+.imatgeX1{
+    width: 15%;
+    margin: 2%;
+    box-shadow: 2px 2px 2px rgb(238, 208, 157),2px 2px 2px white;
+}
+.icona{
+    width: 5%;
+}
+
+/*capcalera*/
+#capcalera,#peudepagina{
+    width: 110%;
+    position: fixed;
+    background-color:#282524;
+    margin: 0%;
+    padding: 0%;
+    z-index: 1;
+}
+#capcalera > ul{
+    float: left;
+    margin: 1% 0% 0% 12%;
+}
+#capcalera > ul>li>a{
+    color:white;
+    font-size: 1em;
+}
+#capcalera > ul>li>a:hover{
+    color:rgb(238, 208, 157);
+}
+#capcalera > h3{
+    float:left;
+    color: white;
+    margin: 1% 0% 0% 15%;
+}
+
+
+/*CONTINGUT */
+.contingut_centrat{
+    text-align: center;
+    background-color: white;
+}
+.contingut_dret{
+    text-align: right;
+    filter: brightness(99%);
+    background-color: white;
+}
+
+.contingut_esquerre{
+    text-align: left;
+	transition:all .3s ease-in-out;
+}
+.contingut_esquerre:hover{
+    transform:translate(2%);
+}
+
+/*Formulari*/
+.contingut_centrat > .formulari{
+    float: center;
+}
+.contingut_esquerre > .formulari{
+    float: left;
+}
+.contingut_dret > .formulari{
+    float: right;
+}
+.formulari{
+    width:50%;	
+    padding: 0%;
+    margin: 2% 9.1% 0% 0%;
+}
+.form_left{
+    float:left;
+    width:50%;
+    margin: 0%;
+    padding: 0%;
+}
+.form_right{
+    float:right;
+    width:48%;
+    padding: 0%;
+}
+#form_comment{
+	width:80%;
+	height:100px;
+	
+}
+.form_button{
+	transition:all .3s ease-in-out;
+}
+.form_buttom:hover{
+    background-color:gray;
+}
+
+
+/*Peu de pagina */
+#peudepagina{
+    position: static;
+    bottom: 0%;
+    color: white;
+}
+

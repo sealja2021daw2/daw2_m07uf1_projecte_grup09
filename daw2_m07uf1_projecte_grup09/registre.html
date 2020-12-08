@@ -1,0 +1,36 @@
+<html>
+<head>
+	<meta content="text/html" charset="UTF-8" http-equiv="content-type"/>
+	<link rel="stylesheet" type="text/css" href="CSS/projecte.css" />
+	<title>projecte</title>
+</head>
+<body>
+    <div class="contingut_centrat">
+        <a class="a_button" href="index.html">LOGIN</a>
+        <form class="formulari" action="http://localhost/daw2_m07uf1_projecte_grup09/registre.php" method="POST"> 
+            <div class="form_left">
+                <h1>LOGIN INFORMATION</h1>
+                <label for="form_userr">USER:</label>
+                <input maxlength="20" name="form_userr"  type="text"/><br/>
+                <label for="form_passwordr">PASSWORD:</label>
+                <input maxlength="20" name="form_passwordr"  type="password"/><br/>
+            </div>
+            <div class="form_right">
+                <h1>PERSONAL INFORMATION</h1>
+                <label for="form_allnamer">ALL NAME:</label>
+                <input maxlength="100" name="form_allnamer"  type="text"/><br/>
+                <label for="form_phoner">PHONE:</label>
+                <input name="form_phoner"  type="number"/><br/>
+                <label for="form_emailr">EMAIL:</label>
+                <input maxlength="40" name="form_emailr"  type="email"/><br/>
+                <label for="form_visar">VISA:</label>
+                <input name="form_visar"  type="number"/><br/>
+                <label for="form_postalr">POSTAL CODE:</label>
+                <input maxlength="40" name="form_postalr" type="text"/><br/>
+            </div>
+            <input class="form_buttom" type="submit" value="SEND"/>
+            <input class="form_buttom" type="reset" value="REMOVE"/>
+        </form>
+    </div>
+</body>
+</html>
