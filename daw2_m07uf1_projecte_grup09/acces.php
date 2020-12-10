@@ -12,23 +12,10 @@
             $_SESSION['clientid'] = $admin->id;
             $estat=1;
         }else{
-            $filename="FITXERS/users.txt";
-            $fitxer=fopen($filename,"r+") or die ("No s'ha pogut obrir el fitxer");
-            if ($fitxer) {
-                $mida_fitxer=filesize($filename);	
-                $linia = explode(PHP_EOL, fread($fitxer,$mida_fitxer));
-            }
-            foreach ($linia as $cadena) {
-                $prop=explode(';',$cadena);
-                if($_POST['form_useri'] == $prop[1] && $_POST['form_passwordi']==$prop[2]){
-                    $estat=1;
-                    $usuariacces=new Client($prop[0],$prop[1],$prop[2],$prop[3],$prop[4],$prop[5],$prop[6],$prop[7]);
-                    $_SESSION['clientname'] = $usuariacces->user;
-                    $_SESSION['clientid'] = $usuariacces->id;
-                    break;
-                }
-            }
-            fclose($fitxer);
+            include 'classfitxer.php';
+            $fitxer1 = new Fitxer("FITXERS/users.txt");
+            $linea=$fitxer1->fitxerlectura();
+            $usuariacces=$fitxer1->accedir($linea,$_POST['form_useri'],$_POST['form_passwordi']); 
         }
     }
 ?>

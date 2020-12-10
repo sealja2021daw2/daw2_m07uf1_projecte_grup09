@@ -4,23 +4,11 @@
      if (!isset($_SESSION["clientid"]));
      else{
           include '../classproduct.php';
-          $filename="../FITXERS/products.txt";
-          $fitxer=fopen($filename,"r") or die ("No s'ha pogut obrir el fitxer");
-          if ($fitxer) {
-               $mida_fitxer=filesize($filename);	
-               $linia = explode(PHP_EOL, fread($fitxer,$mida_fitxer));
-          }
-          $cambia="h";
+          include '../classfitxer.php';
+		$fitxer1 = new Fitxer("../FITXERS/products.txt");
+          $linea=$fitxer1->fitxerlectura();
           $seccions="";
-          foreach ($linia as $cadena) {
-               $prop=explode(';',$cadena);
-               if( $cambia != $prop[2]){
-               $cambia=$prop[2];
-               $producte=new Product($prop[0],$prop[1],$prop[2],$prop[3],$prop[4]);
-               $seccions.="".$producte->section."<br/>";
-               }
-          }
-          fclose($fitxer);
+          $seccions=$fitxer1->visualitzarseccio($linea, $_SESSION['clientname']); 
      }
 ?>
 <html>

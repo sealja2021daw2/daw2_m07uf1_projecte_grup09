@@ -1,3 +1,4 @@
-1;porta papels;utensilis;2.53; ;
-2;huevos;alimentacion;1.20;;
-344342;armariIkea;mobiliari;200.30;;
+1;porta papels;utensilis;2.53;portapapels.jpg;
+2;huevos;alimentacio;1.20;huevo.jpg;
+132334;patatesfrites lays amb sal mid petita;alimentacio;0.20;patalayspetites.jpg;
+344342;armariIkea;mobiliari;200.30;armariikea.jpg;

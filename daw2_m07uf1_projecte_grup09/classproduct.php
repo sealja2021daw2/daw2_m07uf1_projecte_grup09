@@ -40,7 +40,7 @@
         }
 
         public function toString(){
-            return "Codi: ".$this->code."\t| Producte: ".$this->name."\t| Section: ".$this->section."\t| Preu: ".$this->price."€"."\t| URLImatge: ".'../IMATGES/'.$this->image;
+            return "Codi: ".$this->code."\t| Producte: ".$this->name."\t| Section: ".$this->section."\t| Preu: ".$this->price."€"."\t| Imatge:".'<img class="imatgeX1" src="../IMATGES/'.$this->image.'"/>';
         }
     }
 ?>

@@ -4,22 +4,13 @@
      if (!isset($_SESSION["clientid"]));
      else{
           include '../classproduct.php';
-          $filename="../FITXERS/products.txt";
-          $fitxer=fopen($filename,"r") or die ("No s'ha pogut obrir el fitxer");
-          if ($fitxer) {
-               $mida_fitxer=filesize($filename);	
-               $linia = explode(PHP_EOL, fread($fitxer,$mida_fitxer));
-          }
+          include '../classfitxer.php';
+          $fitxer1 = new Fitxer("../FITXERS/products.txt");
+          $linea=$fitxer1->fitxerlectura();
           $productes="";
-          foreach ($linia as $cadena) {
-               $prop=explode(';',$cadena);
-               if($_GET['form_section']== $prop[2]){
-               $producte=new Product($prop[0],$prop[1],$prop[2],$prop[3],$prop[4]);
-               $productes.="code ".$producte->code."|\t".$producte->name."\t".$producte->price."€<br/>";
-               }
-          }
-          fclose($fitxer);
-     }
+          $productes=$fitxer1->visualitzarproductesseccio($linea,$_GET['form_section']); 
+	  }
+     
 ?>
 <html>
 <head>

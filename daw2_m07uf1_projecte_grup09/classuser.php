@@ -47,16 +47,10 @@
     }
 
     class Admin extends User{
-        private $peticio;
+
     }
 
     class Client extends User{
-        public function peticioborrausuari(){    
-
-        }
-        public function peticiomodificausuari(){
-            
-        }
         public function toString(){
             return "Nombre Complet: ".$this->allname."\t Telefon: ".$this->phone."\t Email: ".$this->email."\t Visa: ".$this->visa."\t Codi Postal: ".$this->postalcode;
         }

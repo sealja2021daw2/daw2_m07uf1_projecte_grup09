@@ -23,8 +23,8 @@
          <h1>COMMANDS</h1>
      <?php
         if (!isset($_SESSION["clientid"])) echo "NO HI HA CAP SESSIO CREADA".'<a class="a_button" href="http://localhost/daw2_m07uf1_projecte_grup09/index.html">INICIAR SESSIO</a>';
-        else if ($comandes==null) echo "<p>No hi ha cap comanda.</p> \n".'<a class="a_button" href="http://localhost/daw2_m07uf1_projecte_grup09/clientprincipal.html">tornar</a>';
-        else echo "<p>".$comandes."</p>".'<a class="a_button" href="http://localhost/daw2_m07uf1_projecte_grup09/clientprincipal.html">tornar</a>';
+        else if ($comandes==null) echo "<p>No hi ha cap comanda.</p> \n".'<a class="a_button" href="http://localhost/daw2_m07uf1_projecte_grup09/commands.html">tornar</a>';
+        else echo "<p>".$comandes."</p>".'<a class="a_button" href="http://localhost/daw2_m07uf1_projecte_grup09/commands.html">tornar</a>';
      ?>
      </div>
 </body>

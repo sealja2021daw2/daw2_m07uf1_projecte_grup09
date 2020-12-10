@@ -1,18 +1,12 @@
 <?php
-     $filename="../FITXERS/peticions.txt";
-     $fitxer=fopen($filename,"r") or die ("No s'ha pogut obrir el fitxer");
-     if ($fitxer) {
-          $mida_fitxer=filesize($filename);	
-          $linia = explode(PHP_EOL, fread($fitxer,$mida_fitxer));
+     session_start();
+     if (!isset($_SESSION["clientid"]));
+     else if($_SESSION["clientname"]=="admin"){
+          include '../classfitxer.php';
+          $fitxer1 = new Fitxer("../FITXERS/peticions.txt");
+          $linea=$fitxer1->fitxerlectura();
+          $visupeticio=$fitxer1->visualitzarpeticions($linea);    
      }
-     $visupeticio="";
-     foreach ($linia as $cadena) {
-          $prop=explode(';',$cadena);
-          if("Modifiedcommand"== $prop[0] || "Deletecommand"== $prop[0] || "Deleteuser"== $prop[0] || "Modifieduser"== $prop[0]){
-            $visupeticio.="".$prop[0]."|\t".$prop[1]."|\t".$prop[2]."|\t".$prop[3]."|\t".$prop[4]."<br/>";
-          }
-     }
-     fclose($fitxer);
 ?>
 <html>
 <head>
@@ -23,8 +17,12 @@
 <body>
      <div class="contingut_centrat">
      <?php
-          echo "<h1>VIEW LIST REQUESTS</h1>";
-          echo "<p>".$visupeticio."</p>".'<a class="a_button" href="../adminprincipal.html">tornar</a>';
+          if (!isset($_SESSION["clientid"])) echo "NO HI HA CAP SESSIO CREADA".'<a class="a_button" href="http://localhost/daw2_m07uf1_projecte_grup09/index.html">INICIAR SESSIO</a>';
+          else if($_SESSION["clientname"]!="admin") echo "No tens permís".'<a class="a_button" href="http://localhost/daw2_m07uf1_projecte_grup09/index.html">INICIAR SESSIO</a>';
+          else{
+               echo "<h1>VIEW LIST REQUESTS</h1>";
+               echo "<p>".$visupeticio."</p>".'<a class="a_button" href="../adminprincipal.html">tornar</a>';
+          }
      ?>
      </div>
 </body>
