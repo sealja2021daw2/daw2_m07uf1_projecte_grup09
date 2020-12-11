@@ -16,7 +16,7 @@
                $fitxer1 = new Fitxer("../FITXERS/commands.txt");
                $linea=$fitxer1->fitxerlecturaEscritura();
                $command=null;
-               $command=$fitxer1->afegircomanda($linea, $_SESSION["clientid"],$_POST['form_name']);
+               $command=$fitxer1->afegircomanda($linea, $_SESSION["clientid"],$_POST['form_name'],$today);
           }
      }
 ?>

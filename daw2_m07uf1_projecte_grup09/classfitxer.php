@@ -212,7 +212,7 @@
         }
 
         //metode per afegir comanda
-        public function afegircomanda($linia,$clientid,$form_name){
+        public function afegircomanda($linia,$clientid,$form_name,$today){
             $existeix=0;
             $numcomanda=1;
             foreach ($linia as $cadena) {
@@ -230,7 +230,7 @@
             if($existeix!=1){
                  $comanda=new Command($clientid,$numcomanda,$form_name,$today);
                  $newcomanda.="\n".$comanda->iduser.";".$comanda->numbercommand.";".$comanda->nameproduct.";".$comanda->datecommand.";";
-                 file_put_contents($this->$filename, $newcomanda, FILE_APPEND | LOCK_EX);
+                 file_put_contents($this->filename, $newcomanda, FILE_APPEND | LOCK_EX);
             }
             return $newcomanda;
         }
@@ -328,7 +328,7 @@
                 if($codeproduct==$prop[0]){
                     $existeix=1;
                     $changeproduct="";
-                    for($i=0; $i<4; $i++){
+                    for($i=0; $i<=4; $i++){
                         if($i!=$numcolumn) $changeproduct.="".$prop[$i].";";
                         else $changeproduct.="".$datachange.";";
                     }
