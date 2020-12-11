@@ -101,6 +101,19 @@
             return $comandes;
         }
 
+        //metodes per visualitzar totes les comandes (admin)
+        public function visualitzartotescomandes($linia){
+            $comandes="";
+            foreach ($linia as $cadena) {
+            $prop=explode(';',$cadena); 
+                $comanda=new Command($prop[0],$prop[1],$prop[2],$prop[3],$prop[4]);
+                $comandes.="User ID: ".$comanda->iduser."\t|".$comanda->toString()."<br/>";
+        }
+            return $comandes;
+        }
+
+
+
         //metodes per visualitzar seccions de productes
 		public function visualitzarseccio($linia,$producte){
             $cambia="h";
@@ -152,6 +165,17 @@
                     $user=new Client($prop[0],$prop[1],$prop[2],$prop[3],$prop[4],$prop[5],$prop[6],$prop[7]);
                     break;
                 }
+            }
+            return $user;
+        }
+
+          //metode per visualitzar tots el usuaris i les seves dades
+          public function visualitzardadestotsusuaris($linia){
+            $user="";
+            foreach ($linia as $cadena) {
+                $prop=explode(';',$cadena);
+                $user1=new Client($prop[0],$prop[1],$prop[2],$prop[3],$prop[4],$prop[5],$prop[6],$prop[7]);
+                $user.="User id: ".$user1->id."\t"."User name: ".$user1->user."\t".$user1->toString()."<br/>";
             }
             return $user;
         }

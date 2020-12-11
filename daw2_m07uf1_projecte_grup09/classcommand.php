@@ -37,7 +37,7 @@
 			}
         }
         public function toString(){
-            return "num.Comanda: ".$this->numbercommand."\t| Producte: ".$this->nameproduct."\t| data de creacio: ".$this->datecommand;
+            return "num.Order: ".$this->numbercommand."\t| Producte: ".$this->nameproduct."\t| data de creacio: ".$this->datecommand;
         }
     }
 ?>

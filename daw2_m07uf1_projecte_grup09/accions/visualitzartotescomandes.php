@@ -8,7 +8,7 @@
         $fitxer1 = new Fitxer("../FITXERS/commands.txt");
         $linea=$fitxer1->fitxerlectura();
         $comandes="";
-        $comandes=$fitxer1->visualitzarllistacomandes($linea,$_SESSION["clientid"]); 
+        $comandes=$fitxer1->visualitzartotescomandes($linea); 
     }
             
 ?>
@@ -23,8 +23,8 @@
          <h1>ORDERS</h1>
      <?php
         if (!isset($_SESSION["clientid"])) echo "NO HI HA CAP SESSIO CREADA".'<a class="a_button" href="http://localhost/daw2_m07uf1_projecte_grup09/index.html">INICIAR SESSIO</a>';
-        else if ($comandes==null) echo "<p>No hi ha cap comanda.</p> \n".'<a class="a_button" href="http://localhost/daw2_m07uf1_projecte_grup09/commands.html">tornar</a>';
-        else echo "<p>".$comandes."</p>".'<a class="a_button" href="http://localhost/daw2_m07uf1_projecte_grup09/commands.html">tornar</a>';
+        else if ($comandes==null) echo "<p>No hi ha cap comanda.</p> \n".'<a class="a_button" href="http://localhost/daw2_m07uf1_projecte_grup09/managementcommands.html">tornar</a>';
+        else echo "<p>".$comandes."</p>".'<a class="a_button" href="http://localhost/daw2_m07uf1_projecte_grup09/managementcommands.html">tornar</a>';
      ?>
      </div>
 </body>
